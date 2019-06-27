@@ -581,6 +581,9 @@
       "title": "Save logs",
       "desc": "Saving Ledger Live logs may be necessary for troubleshooting purposes.",
       "btn": "Save"
+    },
+    "discreetMode":{
+      "toggleDiscreetMode": "Toggle discreet mode"
     }
   },
   "password": {

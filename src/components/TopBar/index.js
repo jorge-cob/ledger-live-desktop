@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { withRouter } from 'react-router'
 import type { Location, RouterHistory } from 'react-router'
+import ToggleDiscreetModeButton from 'components/Discreet/ToggleDiscreetModeButton'
 
 import type { T } from 'types/common'
 
@@ -111,6 +112,14 @@ class TopBar extends PureComponent<Props> {
                 </Box>
               </Fragment>
             )}
+            <Tooltip render={() => t('settings.discreetMode.toggleDiscreetMode')} >
+              <ItemContainer isInteractive>
+                <ToggleDiscreetModeButton />
+              </ItemContainer>
+            </Tooltip>
+            <Box justifyContent="center">
+              <Bar />
+            </Box>
             <Tooltip render={() => t('settings.title')} data-e2e="setting_button">
               <ItemContainer isInteractive onClick={this.navigateToSettings}>
                 <IconSettings size={16} />
