@@ -222,7 +222,10 @@
     "title": "Tokens",
     "cta": "Receive token",
     "placeholder": "To add tokens, simply send them to your Ethereum address.",
-    "link": "Learn more"
+    "link": "Learn more",
+    "seeTokens": "See tokens ({{tokenCount}})",
+    "hideTokens": "Hide tokens ({{tokenCount}})",
+    "tooltip": "Token from"
   },
   "addAccounts": {
     "title": "Add accounts",
@@ -298,9 +301,14 @@
       "all": "App catalog",
       "installing": "Installing {{app}}...",
       "uninstalling": "Uninstalling {{app}}...",
-      "installSuccess": "Successfully installed {{app}}",
+      "installSuccess": "{{app}} was successfully installed",
+      "unsupportedSuccess": "Learn how to use {{app}}",
       "uninstallSuccess": "{{app}} uninstalled",
-      "help": "Check on your device to see which apps are already installed"
+      "supportedCurrency": "{{app}} is now installed on your {{device}}. Add an account so you can send and receive funds",
+      "unsupportedCurrency": "{{app}} support is not integrated in Ledger Live. Click the button to learn how to use it.",
+      "help": "Check on your device to see which apps are already installed",
+      "installed": "App installed",
+      "uninstalled": "App uninstalled"
     },
     "firmware": {
       "installed": "Firmware version {{version}}",
@@ -329,10 +337,8 @@
       "mcuFirst": "Disconnect the USB cable from your device",
       "mcuSecond": "Press the left button and hold it while you reconnect the USB cable until the <1><0>{{repairProcessing}}</0></1> screen appears",
       "mcuPin": "Please be patient while the update is finalized",
-      "mcuBlueFirst":
-        "Press and hold the side button for 10 seconds to turn off the device. Release the button.",
-      "mcuBlueSecond":
-        "Press and hold the button for at least 5 seconds until the Boot Options are displayed. Tap Bootloader Mode",
+      "mcuBlueFirst": "Press and hold the side button for 10 seconds to turn off the device. Release the button.",
+      "mcuBlueSecond": "Press and hold the button for at least 5 seconds until the Boot Options are displayed. Tap Bootloader Mode",
       "successTitle": "Firmware updated",
       "successText": "Please re-install the apps on your device",
       "resetTitle": "Prepare Device",
@@ -348,10 +354,8 @@
         "recoveryMode": "Tap {{mode}} Mode. Wait until the dashboard appears.",
         "third": "3. Uninstall all apps",
         "openLive": "Open the Manager in Ledger Live.",
-        "uninstall":
-          "Click on the grey trash icon for all apps currently installed on the {{deviceName}}. This makes room for the firmware installer.",
-        "disclaimer":
-          "Note: Your funds are not affected by this operation, the private keys to access your crypto assets in the blockchain remain secured on your Recovery sheet."
+        "uninstall": "Click on the grey trash icon for all apps currently installed on the {{deviceName}}. This makes room for the firmware installer.",
+        "disclaimer": "Note: Your funds are not affected by this operation, the private keys to access your crypto assets in the blockchain remain secured on your Recovery sheet."
       }
     },
     "title": "Manager",
@@ -455,7 +459,6 @@
       "about": "About",
       "experimental": "Experimental features"
     },
-
     "export": {
       "accounts": {
         "title": "Export accounts",

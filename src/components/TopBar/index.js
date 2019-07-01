@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { withRouter } from 'react-router'
 import type { Location, RouterHistory } from 'react-router'
-import ToggleDiscreetModeButton from 'components/Discreet/ToggleDiscreetModeButton'
 
 import type { T } from 'types/common'
 
@@ -100,43 +99,36 @@ class TopBar extends PureComponent<Props> {
     return (
       <Container bg="lightGrey" color="graphite">
         <Inner>
-          <Box grow horizontal>
+          <Box grow horizontal justifyContent="space-between">
             <Breadcrumb />
-            <Box grow />
-            <CurrenciesStatusBanner />
-            {hasAccounts && (
-              <Fragment>
-                <ActivityIndicator />
-                <Box justifyContent="center">
-                  <Bar />
-                </Box>
-              </Fragment>
-            )}
-            <Tooltip render={() => t('settings.discreetMode.toggleDiscreetMode')} >
-              <ItemContainer isInteractive>
-                <ToggleDiscreetModeButton />
-              </ItemContainer>
-            </Tooltip>
-            <Box justifyContent="center">
-              <Bar />
+            <Box horizontal>
+              <CurrenciesStatusBanner />
+              {hasAccounts && (
+                <Fragment>
+                  <ActivityIndicator />
+                  <Box justifyContent="center">
+                    <Bar />
+                  </Box>
+                </Fragment>
+              )}
+              <Tooltip render={() => t('settings.title')} data-e2e="setting_button">
+                <ItemContainer isInteractive onClick={this.navigateToSettings}>
+                  <IconSettings size={16} />
+                </ItemContainer>
+              </Tooltip>
+              {hasPassword && (
+                <Fragment>
+                  <Box justifyContent="center">
+                    <Bar />
+                  </Box>
+                  <Tooltip render={() => t('common.lock')}>
+                    <ItemContainer isInteractive justifyContent="center" onClick={this.handleLock}>
+                      <IconLock size={16} />
+                    </ItemContainer>
+                  </Tooltip>
+                </Fragment>
+              )}
             </Box>
-            <Tooltip render={() => t('settings.title')} data-e2e="setting_button">
-              <ItemContainer isInteractive onClick={this.navigateToSettings}>
-                <IconSettings size={16} />
-              </ItemContainer>
-            </Tooltip>
-            {hasPassword && ( // FIXME this should be a dedicated component. therefore this component don't need to connect()
-              <Fragment>
-                <Box justifyContent="center">
-                  <Bar />
-                </Box>
-                <Tooltip render={() => t('common.lock')}>
-                  <ItemContainer isInteractive justifyContent="center" onClick={this.handleLock}>
-                    <IconLock size={16} />
-                  </ItemContainer>
-                </Tooltip>
-              </Fragment>
-            )}
           </Box>
         </Inner>
         <SeparatorBar />
